@@ -1,0 +1,51 @@
+Intrinsic Value (IV)
+	IV = (Cf1/((1+r)^1)) + (Cf2/((1+r)^2)) + ... + (Cfn/((1+r)^n)) + (TV/(1+r)^n)
+		Cf: Cash Flows -> Se consiguen los últimos 3 o 4 en yahoo finance, para conseguir los ultimos 10 años hay que hacer web scrapping
+		r: Discount Rate -> Es el WACC y se consigue en Yahoo Finance
+		TV: Terminal Value (Es el valor futuro de la empresa, en este caso a 10 años, y hay que calcularlo)
+
+Terminal Value (TV)
+	TV = (Cfn * (1+g))/(r-g)
+		g: Terminal Growth Rate -> Hay que calcularla, hay tres formas de hacerlo
+
+
+Terminal Growth Rate (g)
+	1. Historical Growth Rate:
+		g = ((CV/PV)^(1/N)) - 1
+			CV: Current Value (Current Growth Rate) -> Hay que calcular el growth rate anual con base al net income
+			PV: Past Value (Past Growth Rate)
+			N: Number of periods 
+	2. Industry Growth Rate:
+		Ig = ((ICV/IPV)^(1/N)) - 1
+			* Se calcula el crecimiento de la industria
+	3. Sustainable Growth Rate
+		g = ROE * Retention Ratio
+			ROE: Return On Equity -> Se consique en Yahoo Finance 
+			Retention Ratio: La proporción de ganancias obtenidas si se reinvierte -> Hay que calcularlo
+
+Retention Ratio
+	Retention Ratio = (Net Income - Dividens)/Net Income
+		* Todo se consigue en Yahoo Finance
+
+--------------------------------------------------------------------------------------------------
+
+Volatility
+	1. Historical Volatility (HV)
+		HV = √VAR * √N
+			N: Number of trading Days 
+			VAR: Variance
+
+		Variance (VAR)
+			VAR = SD/N
+				SD: Standard Deviation
+
+	2. Average True Range (ATR)
+		TR = max(High - Low, abs(High - Previous Close), abs(Low - Previous Close))
+			* Luego sacar el promedio -> ese es el ATR
+
+	3. Realized Volatility (RV)
+		RV = √((∑SDR)/N)
+			SDR: Squared Daily Return
+		
+		Squared Daily Return (SDR)
+			SDR = (Daily return)^2
