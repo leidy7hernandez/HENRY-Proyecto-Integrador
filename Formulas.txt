@@ -25,7 +25,7 @@ Terminal Growth Rate (g)
 
 Retention Ratio
 	Retention Ratio = (Net Income - Dividens)/Net Income
-		* Todo se consigue en Yahoo Finance
+		* Todo se consigue en Investing
 
 --------------------------------------------------------------------------------------------------
 
