@@ -15,7 +15,7 @@ Terminal Growth Rate (g)
 			CV: Current Value (Current Growth Rate) -> Hay que calcular el growth rate anual con base al net income
 			PV: Past Value (Past Growth Rate)
 			N: Number of periods 
-	2. Industry Growth Rate:
+	2. Industry Growth Rate -> se reemplaza por el estimado del mercado
 		Ig = ((ICV/IPV)^(1/N)) - 1
 			* Se calcula el crecimiento de la industria
 	3. Sustainable Growth Rate
@@ -27,6 +27,30 @@ Retention Ratio
 	Retention Ratio = (Net Income - Dividens)/Net Income
 		* Todo se consigue en Marketwatch
 
+--------------------------------------------------------------------------------------------------
+WACC = r
+	WACC = (E/(E+D))*re + (D/(E+D))*rd * (1-Tc)
+		E: Equity -> Se encuentra con Web Scraping - Total Equity
+		D: Debt	-> Se encuentra con Web Scraping - Total Current Liabilities
+		re: Costo de capital propio
+		rd: Costo de la deuda
+		Tc: Tasa impositiva corporativa
+			
+		re = Tasa libre de riesgo + B *(Rendimiento del mercado - Tasa libre de riesgo)
+			Tasa libre de riesgo: Tasa de interés de los bonos del tesoro de Estados Unidos a 10 años
+			B: Beta - Medida de sensibilidad del mercado. -> Se encuentra con Web Scraping
+			Rendimiento del mercado: Rendimiento del indice donde se encuentra la accion durante el año (Crecimiento (%))
+
+		rd = Tasa de interes Nominal de la deuda * (1 - Tc)
+			
+			Tasa de Interés Nominal (%) = (Intereses Anuales / Deuda Total) * 100
+				Intereses Anuales: Interest Expense
+			
+		Tc = (Impuestos Pagados / Ingreso antes de Impuestos) * 100
+			Impuestos Pagados: Income Tax
+			Ingreso antes de Impuestos: Pretax Income
+
+		
 --------------------------------------------------------------------------------------------------
 
 Volatility
